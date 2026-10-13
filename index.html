@@ -935,7 +935,7 @@ const SITE = {
   sponsor: {
     title: "Gökyüzüne birlikte çıkalım",
     text: "Malzeme, üretim ve yarışma süreçlerimizi destekçilerimizle büyütüyoruz. Sponsorluk ve iş birliği için bize yazın.",
-    email: "",          // ör. "hurturkuav@gmail.com"
+    email: "hurturkuav@gmail.com",          // ör. "hurturkuav@gmail.com"
     deckUrl: "",        // isteğe bağlı: sponsorluk dosyası (PDF / Drive linki)
   },
 
@@ -1467,9 +1467,8 @@ $("caps").addEventListener("click", (e) => { const b = e.target.closest(".cap");
   const mail = sp.email;
   const subj = encodeURIComponent("Sponsorluk / İş Birliği — Kılavuz Hürtürk İHA");
   let html = mail
-    ? `<a class="btn solid" href="mailto:${esc(mail)}?subject=${subj}">${ICONS.handshake}Sponsor Ol</a>
-       <a class="btn" href="mailto:${esc(mail)}">${ICONS.mail}E-posta</a>`
-    : `<span class="btn solid off">${ICONS.handshake}Sponsor Ol</span><span class="btn off">${ICONS.mail}E-posta</span>`;
+    ? `<a class="btn solid" style="grid-column:1/-1" href="mailto:${esc(mail)}">${ICONS.mail}E-posta</a>`
+    : `<span class="btn solid off" style="grid-column:1/-1">${ICONS.mail}E-posta</span>`;
   if (sp.deckUrl) html += `<a class="btn" style="grid-column:1/-1" href="${esc(sp.deckUrl)}" target="_blank" rel="noopener">${ICONS.doc}Sponsorluk Dosyası</a>`;
   $("sponsorBtns").innerHTML = html;
   $("mailLine").textContent = mail ? mail : "E-POSTA ADRESİ EKLENECEK";
